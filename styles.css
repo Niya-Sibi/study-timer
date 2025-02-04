@@ -1,0 +1,124 @@
+:root {
+    --primary-color: #6F4E37; /* Coffee brown */
+    --secondary-color: #D2B48C; /* Beige brown */
+    --background-color: #F5F5DC; /* Light beige */
+    --container-bg: #FFF8DC; /* Cornsilk */
+    --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    width: 90%;
+    max-width: 500px; /* Increased width */
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+  
+  input {
+    padding: 10px;
+    margin: 5px;
+    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #5a3c2c; /* Darker coffee brown */
+  }
+  
+  #schedule-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #timer-section, #break-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+  }
+  
+  #timer, #break-timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  #points-section {
+    margin-top: 20px;
+  }
+  
+  #jar-popup {
+    display: none;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    animation: popup 0.5s ease;
+  }
+  
+  @keyframes popup {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Coin Animation */
+  @keyframes fillJar {
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  .coin {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: gold;
+    border-radius: 50%;
+    animation: fillJar 0.5s ease-in-out;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
